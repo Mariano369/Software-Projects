@@ -1,0 +1,990 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+// Aplica la fuente 'Outfit' globalmente
+.pages {
+  background-color: #ffffff;
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+  & .topBarContainerSuperior {
+    background-color: #003466;
+    max-width: 100%; /* Establece un límite de ancho máximo */
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    z-index: 20; /* Asegúrate de que esté encima de otros elementos */
+    overflow: visible; /* Permite que los hijos puedan expandirse */
+    position: fixed; /* Posiciona el contenedor de forma fija en la parte superior */
+    top: 0; /* Colócalo en la parte superior */
+    left: 0; /* Alineación de izquierda */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%; // Centrar verticalmente
+      left: 17%; // Centrar horizontalmente
+      transform: translate(-50%, -50%); // Ajustar la posición al centro
+      width: 2px; // Ancho de la línea
+      height: 20px; // Altura de la línea (ajusta según sea necesario)
+      background-color: #ffbe2e;
+    }
+    & .topBarDivSuperior {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between; /* Distribuye los elementos entre el inicio y el final */
+      align-content: flex-end;
+      display: flex;
+      align-items: center;
+      height: 45px;
+      & .divSaltoPagina {
+        gap: 26px;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 97%; // Mantener esta posición para centrar la línea
+          left: 50%; // Centrar horizontalmente
+          transform: translate(-50%, -50%); // Ajustar la posición al centro
+          width: 100%; // Hacer que la línea ocupe el ancho completo
+          height: 3.5px; // Altura de la línea
+          background-color: #ffbe2e;
+        }
+      }
+      & .divIconMaterialUi {
+        margin-left: auto;
+        justify-content: center;
+        align-items: center;
+        border-radius: inherit;
+        object-fit: cover;
+        & .materialIconEncontranos {
+          color: #fff;
+        }
+      }
+    }
+  }
+  & .divButtonComoLlegar {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    height: 45px;
+    & .buttonEncontranos {
+      font-size: 13px;
+      letter-spacing: -0.018rem;
+      color: #fff;
+      text-transform: capitalize;
+      &:hover {
+        &::after {
+          content: '';
+          display: block; /* Para que se comporte como una línea debajo */
+          position: absolute; /* Agrega esto */
+          bottom: 11px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 85%;
+          height: 1.2px;
+          background-color: #fff;
+          transition: width 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .topBarContainerInferior {
+    background-color: #fff;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    padding: 0 20px; /* Ajusta el espacio lateral */
+    position: relative;
+    margin-top: 45px; /* Este valor es igual a la altura de topBarContainerSuperior */
+    position: relative;
+    & .newFavicon {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto; /* Empuja el favicon al margen izquierdo */
+
+      & .faviconPrincipal {
+        object-fit: cover;
+        display: block; /* Asegura que se comporte como bloque */
+      }
+    }
+    & .divLinks {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end; /* Alinea los enlaces al margen derecho */
+      gap: 25px; /* Espacio entre los enlaces */
+      margin-right: 20px; /* Añade espacio entre los links y el botón contacto */
+      & .divMaterialUiHome {
+        background-color: #003466;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 3px;
+        & .materialIconHome {
+          color: #fff;
+        }
+      }
+      & h6 {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.018rem;
+        text-align: center;
+        color: #333;
+        height: auto; /* Agrega esto */
+        position: relative; /* Importante para el pseudo-elemento */
+      }
+      & .accordionUno {
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: flex-start; /* Centra verticalmente el contenido */
+        align-items: center; /* Centra horizontalmente el contenido */
+        height: 50px; /* Ajusta la altura del "cuadrado" */
+        width: 130px; /* Deja que el ancho se adapte al contenido o ajusta manualmente */
+        background-color: #fff; /* Fondo */
+        border: 1px solid #ccc; /* Borde opcional */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+        position: relative; // Necesario para que el z-index funcione
+        z-index: 100; // Ajusta este valor para asegurarte de que sea mayor que el header
+        & h5 {
+          flex-grow: 1;
+          font-weight: 500;
+          font-size: 15px;
+          letter-spacing: -0.018rem;
+          text-align: center;
+          transition: color 0.2s ease-in-out;
+        }
+        & .containerAccordion {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: row;
+          width: 1680px;
+          height: 435px;
+          padding: 0px;
+          margin-left: 50px;
+          gap: 35px;
+          & .accordionDetails {
+            display: flex; // Mantiene los elementos en fila
+            flex-direction: column; // Organiza los textos en columna
+            justify-content: flex-start; // Asegura que el contenido inicie desde la parte superior
+            flex-wrap: nowrap; // Evita que los textos se muevan a una nueva fila (opcional)
+            gap: 0; // Elimina el espacio entre los textos (puedes ajustarlo según lo que desees)
+            padding: 0; // Elimina cualquier relleno dentro del contenedor
+            box-sizing: border-box; // Asegura que las dimensiones sean correctas
+            height: auto; // Permite que el contenedor tome el tamaño del contenido
+            width: 9.9%;
+            & h5 {
+              color: #ffbe2e;
+              text-transform: uppercase;
+              flex-grow: 1;
+              font-weight: 500;
+              font-size: 15px;
+              letter-spacing: -0.018rem;
+              text-align: left;
+              transition: color 0.2s ease-in-out;
+              margin: 0;
+              line-height: 1; // Ajusta la altura de línea para controlar el espaciado vertical
+              padding: 4px;
+            }
+            & h6 {
+              margin: 0; /* Elimina márgenes por defecto */
+              padding: 5px;
+              text-transform: capitalize;
+              color: #ffffff;
+              display: flex;
+              text-align: left;
+              box-sizing: border-box;
+              font-size: 12px;
+              text-transform: uppercase;
+              line-height: 1.2; // Ajusta la altura de línea para controlar el espaciado vertical
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      & .accordionDos {
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: flex-start; /* Centra verticalmente el contenido */
+        align-items: center; /* Centra horizontalmente el contenido */
+        height: 50px; /* Ajusta la altura del "cuadrado" */
+        width: 130px; /* Deja que el ancho se adapte al contenido o ajusta manualmente */
+        background-color: #fff; /* Fondo */
+        border: 1px solid #ccc; /* Borde opcional */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+        position: relative; // Necesario para que el z-index funcione
+        z-index: 100; // Ajusta este valor para asegurarte de que sea mayor que el header
+        & h5 {
+          flex-grow: 1;
+          font-weight: 500;
+          font-size: 15px;
+          letter-spacing: -0.018rem;
+          text-align: center;
+          color: #333;
+          transition: color 0.2s ease-in-out;
+        }
+        & .accordionDetails {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: 122px;
+          & h6 {
+            color: #ffffff;
+            display: flex;
+            box-sizing: border-box;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 8px;
+            font-weight: 700;
+            display: flex;
+            text-align: start;
+            &:hover {
+              &::after {
+                content: '';
+                display: block; /* Para que se comporte como una línea debajo */
+                position: absolute; /* Agrega esto */
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 3px;
+                background-color: #ffbe2e;
+                transition: width 0.2s ease-in-out;
+              }
+            }
+          }
+        }
+      }
+
+      & .divButtonContacto button {
+        width: 120px;
+        height: 45px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #003466;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background-color: #002244; /* Color al pasar el mouse */
+        }
+      }
+    }
+  }
+  .header {
+    background-color: #fff;
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    & .gridContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      & .gridItemImagen {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          object-fit: cover;
+        }
+      }
+      & .gridItemTexto {
+        text-align: center;
+        margin-top: -30%;
+        z-index: 1;
+
+        h1 {
+          font-size: 40px;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          font-family: 'Georgia', serif;
+          font-weight: 550;
+          color: #333;
+          &::after {
+            content: '';
+            display: block; /* Permite manipular el pseudo-elemento como un bloque */
+            width: 50px; /* Define el ancho del subrayado (puedes ajustarlo) */
+            height: 3px; /* Grosor del subrayado */
+            background-color: #ffbe2e; /* Color del subrayado */
+            margin: 22px auto 0; /* Ajusta la separación hacia abajo */
+          }
+        }
+        h2 {
+          font-size: 24px;
+          color: #333;
+          font-weight: 500;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    & .headerContainerCarousel {
+      max-width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 60px;
+      & .elementCarousel {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; // Agrega esta propiedad
+        justify-content: center;
+        align-items: center;
+        & .gridCarouselUno {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px; // Agrega esta propiedad
+
+          & .gridItemCarouselUno {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & .gridItemLogoUno {
+            margin-top: -90px; // Ajusta la posición del favicon
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & .faviconPrincipalCarousel {
+            object-fit: cover;
+          }
+        }
+
+        & .buttonContainerUno {
+          position: absolute;
+          bottom: 45px;
+          margin-right: 764px;
+          transform: translateX(-50%);
+          z-index: 1;
+          display: flex; /* Agrega display flex para separar elementos */
+          align-items: center; /* Centra verticalmente elementos */
+        }
+
+        & .buttonContainerUno Button {
+          display: flex; /* Agrega display flex para separar texto e ícono */
+          align-items: center; /* Centra verticalmente texto e ícono */
+          gap: 10px; /* Agrega espacio entre texto e ícono */
+          box-shadow: 0 0 1px rgb(25, 118, 210); /* Sombra suave */
+        }
+
+        & .buttonContainerUno a {
+          color: inherit;
+          text-decoration: none;
+        }
+        svg {
+          font-size: 30px;
+          color: #ffbe2e;
+          margin-top: 3px;
+        }
+        & .gridCarouselDos {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px; // Agrega esta propiedad
+          padding-left: 66.5px; // Espacio a la izquierda
+          padding-right: 66.5px; // Espacio a la derecha
+
+          & .gridItemCarouselDos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & .gridItemLogoDos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          & .gridItemTextoFotoDos {
+            margin-top: -280px; // Ajusta la posición del favicon
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          & h1 {
+            font-size: 25px;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+          }
+        }
+
+        & .buttonContainerDos {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-top: 112px;
+          align-self: flex-start;
+          margin-left: 112px; // Ajusta la posición del botón
+        }
+
+        & .buttonContainerDos Button {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 0 1px rgb(25, 118, 210);
+        }
+
+        & .buttonContainerDos a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        svg {
+          font-size: 30px;
+          color: #ffbe2e;
+          margin-top: 3px;
+        }
+        & .gridCarouselTres {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px; // Agrega esta propiedad
+          padding-left: 66.5px; // Espacio a la izquierda
+          padding-right: 66.5px; // Espacio a la derecha
+
+          & .gridItemCarouselTres {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          & .gridItemTextoFotoTres {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -295px;
+            margin-right: 250px;
+          }
+          & h1 {
+            font-family: 'Georgia', serif;
+            font-size: 45px;
+            font-weight: bold;
+            color: #003466;
+            margin-bottom: 40px;
+          }
+          & h2 {
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+          & h3 {
+            color: #ffbe2e;
+            font-size: 25px;
+            font-weight: 600;
+          }
+          & .gridItemLogoTres {
+            margin-top: -307px; // Ajusta la posición del favicon
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & .faviconPrincipalCarouselTres {
+            object-fit: cover;
+          }
+        }
+
+        & .buttonContainerTres {
+          position: absolute;
+          bottom: 45px;
+          margin-right: 764px;
+          transform: translateX(-50%);
+          z-index: 1;
+          display: flex; /* Agrega display flex para separar elementos */
+          align-items: center; /* Centra verticalmente elementos */
+        }
+
+        & .buttonContainerTres Button {
+          display: flex; /* Agrega display flex para separar texto e ícono */
+          align-items: center; /* Centra verticalmente texto e ícono */
+          gap: 10px; /* Agrega espacio entre texto e ícono */
+          box-shadow: 0 0 1px rgb(25, 118, 210); /* Sombra suave */
+        }
+
+        & .buttonContainerTres a {
+          color: inherit;
+          text-decoration: none;
+        }
+        svg {
+          font-size: 30px;
+          color: #ffbe2e;
+          margin-top: 3px;
+        }
+      }
+    }
+    .containerCards {
+      background-color: #eef3f7;
+      height: 750px;
+      max-width: 100vw;
+      display: flex; // Distribuye elementos en línea
+      align-items: center; // Alinea elementos verticalmente
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 60px;
+      & .divTarjetas {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        height: auto;
+        width: 100%;
+        & .aboutCard {
+          padding: 15px;
+          background-color: #003466;
+          width: 250px;
+          height: 270px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          transition: transform 0.3s;
+          justify-content: space-between;
+          border-radius: 0.2rem;
+          & .img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #ffbe2e;
+          }
+          & h5 {
+            padding: 5px;
+            font-size: 24px;
+            font-weight: 500;
+            color: white;
+          }
+          & .buttonTarjetasCertificaciones {
+            color: #fff;
+            font-size: 15px;
+            text-transform: none;
+          }
+          & .materialIconTarjetasCertificaciones {
+            color: #ffbe2e;
+            display: flex;
+            margin-left: 105px;
+          }
+          & .subtitle1 {
+            color: #86a4af;
+          }
+        }
+      }
+    }
+    & .contenedorTarjetasQuienesSomos {
+      display: flex; // Distribuye elementos en línea
+      align-items: center; // Alinea elementos verticalmente
+      justify-content: center;
+      height: auto;
+      max-width: 100%;
+      margin-bottom: 60px;
+      & .divTarjetasQuienesSomos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        gap: 90px;
+        & .divContenidoQuienesSomos {
+          flex-direction: column;
+          text-align: center;
+          background-color: #eef3f7;
+          width: 270px;
+          height: 190px;
+          border: solid 2px #003466;
+          padding: 0 10px;
+          & h6 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: #022a4f;
+          }
+          & .subtitle1 {
+            color: #333333;
+          }
+        }
+      }
+    }
+    & .contenedorTarjetasContacto {
+      display: flex; // Distribuye elementos en línea
+      align-items: center; // Alinea elementos verticalmente
+      justify-content: center;
+      height: 400px;
+      width: 100%;
+      margin-bottom: 60px;
+      & .divTarjetasContacto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 310px;
+        gap: 20px;
+        & .divContenidoContactoTarjetaUno {
+          background-color: #eef3f7;
+          display: flex; // Agrega display: flex
+          flex-direction: column; // Ya lo tenías
+          align-items: center; // Ya lo tenías
+          justify-content: center; // Agrega justify-content: center
+          width: 310px;
+          height: 250px;
+          gap: 20px;
+          & .materialIconTarjetasContacto {
+            color: #ffbe2e;
+          }
+          & h6 {
+            text-align: center;
+            font-size: 32px;
+            color: #022a4f;
+            text-decoration: none; /* Quita el subrayado nativo */
+            &::after {
+              content: '';
+              display: block; /* Permite manipular el pseudo-elemento como un bloque */
+              width: 30px; /* Define el ancho del subrayado (puedes ajustarlo) */
+              height: 3px; /* Grosor del subrayado */
+              background-color: #ffbe2e; /* Color del subrayado */
+              margin: 8px auto 0; /* Ajusta la separación hacia abajo */
+            }
+          }
+          & .subtitle2 {
+            color: #333333;
+          }
+        }
+        & .divContenidoContactoTarjetaDos {
+          background-color: #003466;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 400px;
+          height: 310px;
+          gap: 20px; /* Agrega un espacio entre los elementos */
+          & .materialIconTarjetasContacto {
+            color: #ffbe2e;
+          }
+          & h6 {
+            font-size: 15px;
+            color: #fff;
+          }
+          & .subtitle2 {
+            color: #fff;
+          }
+        }
+        & .divContenidoContactoTarjetaTres {
+          background-color: #eef3f7;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 310px;
+          height: 250px;
+          gap: 20px; /* Agrega un espacio entre los elementos */
+          & .materialIconTarjetasContacto {
+            color: #ffbe2e;
+          }
+          & h6 {
+            font-size: 32px;
+            color: #022a4f;
+            text-decoration: none; /* Quita el subrayado nativo */
+            &::after {
+              content: '';
+              display: block; /* Permite manipular el pseudo-elemento como un bloque */
+              width: 30px; /* Define el ancho del subrayado (puedes ajustarlo) */
+              height: 3px; /* Grosor del subrayado */
+              background-color: #ffbe2e; /* Color del subrayado */
+              margin: 8px auto 0; /* Ajusta la separación hacia abajo */
+            }
+          }
+          & .buttonTarjetasContacto {
+            text-transform: none;
+          }
+          & .subtitle2 {
+            color: #333333;
+          }
+        }
+      }
+    }
+    & .contenedorCertificados {
+      height: 200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & .divTituloCertificados {
+        background-color: #003466;
+        height: 120px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h1 {
+          color: #fff;
+          font-size: 32px;
+          font-weight: bold;
+          display: flex;
+          margin-top: -8px;
+        }
+        & .divMaterialIconCertificados {
+          display: flex;
+          height: auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          gap: -10px;
+          & .materialIconCertificado {
+            display: flex;
+            margin-right: -15px;
+            color: #ffbe2e;
+          }
+          & .buttonUnoCertificados {
+            text-decoration: underline;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    & .contenedorContenidoCertificados {
+      width: 100%; /* Establece un límite de ancho máximo */
+      height: 200px;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      display: flex;
+      & .divContenidoCertificados {
+        width: 100%; /* Establece un límite de ancho máximo */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h2 {
+          text-align: start;
+          font-weight: 400;
+          color: #003466;
+          font-size: 22px;
+        }
+        & h3 {
+          font-size: 18px;
+          color: #000000;
+          margin-top: 20px;
+        }
+        & .buttonDosCertificados {
+          margin-top: 20px;
+          text-decoration: underline;
+        }
+      }
+    }
+    .containerCardsFirmaDigital {
+      height: 400px;
+      width: 100%;
+      display: flex; // Distribuye elementos en línea
+      flex-direction: column;
+      gap: 30px;
+
+      & .divTarjetasFirmaDigital {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 550px;
+        width: 100%;
+        & .aboutCardFirmaDigital {
+          background-color: #fff;
+          width: 450px;
+          height: 260px;
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.3s;
+          border: 2px solid #ffbe2e;
+          & h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #003466;
+            padding-top: 20px;
+            line-height: 19px;
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          & h2 {
+            font-size: 18px;
+            color: #000000;
+            padding-top: 20px;
+            line-height: 19px;
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          & .divButtonFirmaDigital {
+            color: #00aaff;
+            &:hover {
+              transform: scale(1.05);
+              background-color: transparent; /* Desaparece el color al pasar el mouse */
+              box-shadow: 0 0 0 0.4px #00aaff; /* Sombra que simula un borde muy fino */
+              border: none; /* Elimina el borde original */
+            }
+          }
+        }
+      }
+    }
+
+    & .contenedorFirmaDigital {
+      background-color: #fff;
+      display: flex; // Distribuye elementos en línea
+      align-items: center; // Alinea elementos verticalmente
+      justify-content: center;
+      height: 400px;
+      width: 100%;
+      margin-bottom: 60px;
+      & .divFirmaDigital {
+        width: 100%; /* Establece un límite de ancho máximo */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        & .divSubtitle1 {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 15px;
+
+          & .subtitle1 {
+            font-weight: bold;
+          }
+        }
+        & .divSubtitle2 {
+          display: flex;
+          flex-direction: column;
+          & .subtitle2 {
+            color: #000000;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.containerIcons {
+  background-color: #003466;
+  height: 500px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between; // Alinea los divs a los extremos
+
+  & .footer {
+    background-color: #003466; // Color del fondo
+    display: flex;
+    width: auto; // Asegura que ocupe todo el ancho disponible
+    align-items: center;
+    padding: 0 20px;
+    & .direccionEscribania {
+      height: 300px; // Altura del footer
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 20px;
+      padding: 20px;
+      & h1 {
+        font-size: 16px;
+        color: #ffbe2e;
+        font-weight: bold;
+        padding-bottom: 25px;
+      }
+      & h2 {
+        font-size: 13.5px;
+        color: #ffffff;
+        font-weight: bold;
+        padding-bottom: 25px;
+      }
+      & h3 {
+        font-size: 13.5px;
+        color: #ffffff;
+        font-weight: bold;
+        padding-bottom: 25px;
+      }
+      & h4 {
+        font-size: 13.5px;
+        color: #ffffff;
+        font-weight: bold;
+        padding-bottom: 25px;
+      }
+      & .imgFooter {
+        margin-top: -371px;
+        margin-left: -550px;
+      }
+    }
+    & .divLinksFooter {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px; // Añade espaciado interno
+      height: 300px;
+      align-items: flex-start;
+      margin-top: 20px;
+      margin-left: auto;
+      & h1 {
+        margin-left: 8px;
+        font-size: 16px;
+        color: #ffbe2e;
+        font-weight: bold;
+        padding-bottom: 20px;
+      }
+      & button {
+        color: #ffffff;
+        font-size: 13.5px;
+        text-transform: capitalize;
+      }
+    }
+    & .divWhatsappPrincipal {
+      width: 240px;
+      border-radius: 1.6rem;
+
+      & .whatsappLink {
+        position: fixed;
+        bottom: 20px; // Distancia desde la parte inferior de la pantalla
+        right: 50px; // Distancia desde el lado derecho de la pantalla
+        z-index: 1000; // Asegura que esté por encima de otros elementos
+
+        & .whatsappIcon {
+          font-size: 48px;
+          background-color: #25d366; // Color verde de WhatsApp
+          color: white;
+          border-radius: 50%; // Para hacerlo circular
+          transition: transform 0.3s ease-in-out; // Animación suave
+        }
+      }
+    }
+  }
+}
+.divDerechosDeAutor {
+  background-color: #003466;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  & h1 {
+    color: #ffffff;
+    font-size: 13.5px;
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+}
