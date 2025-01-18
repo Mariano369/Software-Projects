@@ -1,4 +1,5 @@
 {
+
   "name": "sistemadefacturacion",
   "version": "1.0.0",
   "description": "",
@@ -96,5 +97,21 @@
         "presets": ["minify"]
       }
     }
-  }
+  },
+
+   "name": "prep",
+   "version": "1.0.0",
+   "main": "index.js",
+   "scripts": {
+      "test": "jest",
+      "jest": "jest --testNamePattern="
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "jest": "^29.7.0"
+   },
+   "devDependencies": {},
+   "description": ""
 }
